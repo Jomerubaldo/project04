@@ -8,12 +8,19 @@ const multiButton = document.querySelector('#multiplication');
 const divideButton = document.querySelector('#divide');
 const myResetButton = document.querySelector('#reset');
 
+// Initial value  need if you want reset
+let value = 0;
+
 // Create function Add
 addButton.addEventListener('click', myAddFunction);
 function myAddFunction() {
   const addValue1 = inputValue1.value;
   const addValue2 = inputValue2.value;
   const total = Number(addValue1) + Number(addValue2);
+
+  // Clear input Every click function
+  inputValue1.value = '';
+  inputValue2.value = '';
 
   // Using DOM to display output
   document.querySelector('#displayOutPut').innerHTML = total;
@@ -26,6 +33,10 @@ function myMinusFunction() {
   const minusValue2 = inputValue2.value;
   const total = Number(minusValue1) - Number(minusValue2);
 
+  // Clear input Every click function
+  inputValue1.value = '';
+  inputValue2.value = '';
+
   // Using DOM to display output
   document.querySelector('#displayOutPut').innerHTML = total;
 }
@@ -36,6 +47,10 @@ function myMultiFunction() {
   const multiValue1 = inputValue1.value;
   const multiValue2 = inputValue2.value;
   const total = Number(multiValue1) * Number(multiValue2);
+
+  // Clear input Every click function
+  inputValue1.value = '';
+  inputValue2.value = '';
 
   // Using DOM display output
   document.querySelector('#displayOutPut').innerHTML = total;
@@ -48,14 +63,20 @@ function myDivideFunction() {
   const divideValue2 = inputValue2.value;
   const total = Number(divideValue1) / Number(divideValue2);
 
+  // Clear input Every click function
+  inputValue1.value = '';
+  inputValue2.value = '';
+
   // Using DOM display output
   document.querySelector('#displayOutPut').innerHTML = total;
 }
 
-// Need to fix it to reset the value
+// Create function reset
 myResetButton.addEventListener('click', myResetFunction);
 function myResetFunction() {
-  displayOutPut;
+  // Reset
+  count = 0;
 
-  document.querySelector('#displayOutPut').innerHTML = reset;
+  // Using DOM display output
+  document.querySelector('#displayOutPut').innerHTML = count;
 }
